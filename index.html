@@ -49,9 +49,8 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade { animation: fadeIn 0.6s ease-out forwards; }
+        .animate-fade { animation: fadeIn 0.5s ease-out forwards; }
         .delay-100 { animation-delay: 100ms; opacity: 0; }
-        .delay-200 { animation-delay: 200ms; opacity: 0; }
 
         .glass-card {
             background: rgba(5, 22, 36, 0.7);
@@ -86,27 +85,24 @@
         </div>
     </nav>
 
-    <!-- Conteúdo Principal (Centralizado verticalmente em telas grandes para evitar rolagem) -->
+    <!-- Conteúdo Principal (Centralizado sem rolagem vertical) -->
     <main class="flex-grow flex flex-col justify-center w-full max-w-6xl mx-auto px-4 py-6 gap-6">
         
         <!-- Bloco Superior: Apresentação & Contato Lado a Lado -->
         <div class="flex flex-col md:flex-row gap-6 items-stretch animate-fade">
-            <!-- Sobre Mim -->
+            <!-- Sobre Mim (Texto Breve e Direto) -->
             <div class="flex-1 glass-card rounded-xl p-6 md:p-8 flex flex-col justify-center">
-                <div class="inline-block px-2.5 py-1 rounded bg-primary/10 border border-primary/20 text-primary text-[10px] uppercase font-bold tracking-wider w-max mb-4">
-                    Disponível para Consultoria
-                </div>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2 leading-tight">Walex Piccinini</h1>
-                <h2 class="text-lg text-primary font-medium mb-4">Desenvolvedor de Software & Consultor</h2>
-                <p class="text-sm sm:text-base text-text-muted leading-relaxed max-w-2xl">
-                    Atuo no desenvolvimento Full Stack e presto consultoria técnica para criação, manutenção e otimização de sistemas. Meu foco é entregar arquiteturas sólidas, código limpo e soluções que resolvam problemas reais de negócio com eficiência.
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-1 leading-tight">Walex Piccinini</h1>
+                <h2 class="text-lg text-primary font-medium mb-4">Desenvolvedor Full Stack & Consultor</h2>
+                <p class="text-sm sm:text-base text-text-muted leading-relaxed max-w-3xl">
+                    Atuação em desenvolvimento de software e consultoria técnica. Foco na entrega de sistemas eficientes, arquiteturas escaláveis e soluções tecnológicas alinhadas aos objetivos do negócio.
                 </p>
             </div>
 
             <!-- CTA Direto -->
-            <div class="md:w-72 glass-card rounded-xl p-6 flex flex-col items-center justify-center text-center gap-4">
-                <h3 class="text-lg font-bold text-white">Precisa de apoio técnico?</h3>
-                <p class="text-xs text-text-muted">Vamos conversar sobre a arquitetura do seu próximo projeto.</p>
+            <div class="md:w-72 glass-card rounded-xl p-6 flex flex-col items-center justify-center text-center gap-3">
+                <h3 class="text-base font-bold text-white">Precisa de apoio técnico?</h3>
+                <p class="text-xs text-text-muted">Vamos conversar sobre a sua arquitetura ou próximo projeto.</p>
                 <a href="https://linkedin.com/in/[SEU_LINKEDIN_AQUI]" target="_blank" class="btn-neon w-full py-2.5 rounded text-sm font-bold mt-2">
                     Falar no LinkedIn
                 </a>
