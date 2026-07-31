@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walex Piccinini | Dev & Consultoria</title>
+    <title>WARP Consultoria | Dev & BI</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,7 +21,6 @@
                         ground: 'var(--surface-ground)',
                         raised: 'var(--surface-raised)',
                         nested: 'var(--surface-nested)',
-                        hover: 'var(--surface-hover)',
                         'border-color': 'var(--border-color)',
                         'text-main': 'var(--text-color)',
                         'text-muted': 'var(--text-color-secondary)',
@@ -35,7 +34,6 @@
     </script>
 
     <style>
-        /* Variáveis Globais (Rasoftech) e Configurações Base */
         :root {
             --primary-color: #00E5BC; 
             --primary-color-rgb: 0, 229, 188;
@@ -44,7 +42,6 @@
             --surface-ground: #020B12; 
             --surface-raised: #051624; 
             --surface-nested: #0A2133; 
-            --surface-hover: #102E44; 
             --text-color: #F8FAFC; 
             --text-color-secondary: #94A3B8; 
             --border-color: #142D40; 
@@ -52,14 +49,12 @@
 
         html { scroll-behavior: smooth; }
 
-        /* Fundo com profundidade (Gradiente Radial) */
         body {
             background: radial-gradient(circle at top center, var(--surface-raised) 0%, var(--surface-ground) 60%);
             background-attachment: fixed;
             min-height: 100vh;
         }
 
-        /* Animações Keyframes Customizadas */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
@@ -67,11 +62,10 @@
 
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-12px); }
             100% { transform: translateY(0px); }
         }
 
-        /* Classes de Animação */
         .animate-fade-in {
             opacity: 0;
             animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -79,7 +73,6 @@
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
 
-        /* Efeitos de Hover Modernos (Neon Glow) */
         .glass-card {
             background: rgba(5, 22, 36, 0.6);
             backdrop-filter: blur(12px);
@@ -93,7 +86,6 @@
             box-shadow: 0 8px 25px -10px rgba(var(--primary-color-rgb), 0.25);
         }
 
-        /* Botão Primário com Glow Interno */
         .btn-neon {
             position: relative;
             background: var(--primary-color);
@@ -105,109 +97,175 @@
             box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.7);
             transform: scale(1.03);
         }
+
+        /* Timeline Interativa Customizada */
+        .timeline-step {
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .timeline-step:hover span {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.5);
+        }
+        .step-active span {
+            background-color: var(--primary-color) !important;
+            color: var(--primary-color-contrast) !important;
+            box-shadow: 0 0 15px rgba(var(--primary-color-rgb), 0.6);
+            border-color: var(--primary-color) !important;
+        }
+        .step-active strong {
+            color: var(--primary-color) !important;
+        }
     </style>
 </head>
-<body class="text-text-main font-sans antialiased selection:bg-primary selection:text-primary-contrast flex flex-col h-screen">
+<body class="text-text-main font-sans antialiased selection:bg-primary selection:text-primary-contrast flex flex-col min-h-screen">
 
-    <!-- Navegação Compacta Glassmorphism -->
+    <!-- Navegação -->
     <nav class="sticky top-0 z-50 bg-ground/60 backdrop-blur-md border-b border-border-color/50">
         <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tighter transition-transform hover:scale-105">WP<span class="text-primary">.</span></a>
+            <a href="#" class="text-xl font-bold tracking-tighter transition-transform hover:scale-105">WARP<span class="text-primary">.</span></a>
             <div class="flex gap-4 sm:gap-6 items-center text-sm font-medium">
-                <a href="#habilidades" class="text-text-muted hover:text-primary transition-colors">Stack</a>
+                <a href="#metodologia" class="text-text-muted hover:text-primary transition-colors">Metodologia</a>
                 <a href="https://github.com/walexpiccinini" target="_blank" class="text-text-muted hover:text-primary transition-colors">GitHub</a>
                 <a href="#contato" class="btn-neon px-4 py-1.5 font-bold rounded-md">Contato</a>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow w-full max-w-5xl mx-auto px-6 flex flex-col justify-center gap-10 py-6">
+    <main class="flex-grow w-full max-w-5xl mx-auto px-6 flex flex-col justify-center gap-10 py-8">
         
         <!-- Hero Section -->
         <header class="animate-fade-in flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div class="flex-1">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-4">
                     <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    Disponível para Consultoria
+                    Disponível para Projetos
                 </div>
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-text-muted mb-2 leading-tight">
                     Walex Piccinini
                 </h1>
-                <h2 class="text-xl text-primary mb-4 font-medium">Desenvolvedor Full Stack & Consultor</h2>
+                <h2 class="text-xl text-primary mb-4 font-medium">Desenvolvedor Full Stack & Consultor de Dados</h2>
                 <p class="text-base text-text-muted leading-relaxed max-w-xl">
-                    Atuação em desenvolvimento de software e consultoria técnica. Foco na entrega de sistemas eficientes, arquiteturas escaláveis e soluções tecnológicas alinhadas aos objetivos do negócio.
+                    Atuação em desenvolvimento de software corporativo e estruturação técnica de Business Intelligence (BI). Foco em transformar dados em indicadores reais, garantindo arquiteturas seguras e performance analítica.
                 </p>
             </div>
             
-            <!-- Elemento visual decorativo (Moderno) Restaurado -->
-            <div class="hidden md:flex flex-1 justify-center relative animate-float">
-                <div class="w-56 h-56 rounded-full border border-primary/30 absolute opacity-50 shadow-[0_0_50px_rgba(0,229,188,0.15)]"></div>
-                <div class="w-40 h-40 rounded-full border border-primary/50 absolute top-8 shadow-[0_0_30px_rgba(0,229,188,0.2)]"></div>
-                <div class="w-24 h-24 rounded-full bg-gradient-to-br from-primary/80 to-secondary flex items-center justify-center top-16 relative shadow-[0_0_40px_rgba(0,229,188,0.4)] backdrop-blur-sm text-3xl font-bold text-ground">
-                    &lt;/&gt;
+            <!-- Elemento visual decorativo abstrato -->
+            <div class="hidden md:flex flex-1 justify-center items-center relative animate-float z-10 pointer-events-none">
+                <div class="relative w-56 h-56 flex items-center justify-center">
+                    <div class="w-full h-full rounded-full border border-primary/30 absolute opacity-50 shadow-[0_0_50px_rgba(0,229,188,0.15)]"></div>
+                    <div class="w-40 h-40 rounded-full border border-primary/50 absolute shadow-[0_0_30px_rgba(0,229,188,0.2)]"></div>
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-br from-primary/80 to-secondary absolute flex items-center justify-center shadow-[0_0_40px_rgba(0,229,188,0.4)] backdrop-blur-sm text-3xl font-bold text-ground">
+                        <svg class="w-10 h-10 text-ground" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <!-- Habilidades em Grid Compacto e Tags -->
-        <section id="habilidades" class="animate-fade-in delay-100 flex flex-col gap-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                
-                <!-- Front-end -->
-                <div class="glass-card p-5 rounded-xl flex flex-col gap-3">
-                    <h4 class="text-base font-semibold text-white">Front-end</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">Angular</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">TypeScript</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">JavaScript</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">HTML5/Sass</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">Tailwind CSS</span>
+        <!-- Cronograma Interativo da Proposta Comercial -->
+        <section id="metodologia" class="animate-fade-in delay-100 flex flex-col gap-4">
+            <h3 class="text-xl font-bold text-white mb-2">Metodologia de Consultoria BI</h3>
+            
+            <div class="glass-card p-6 rounded-xl flex flex-col gap-6">
+                <!-- Linha do Tempo -->
+                <div class="relative">
+                    <div class="absolute top-[14px] left-[10%] right-[10%] h-[2px] bg-border-color" style="z-index: 1;"></div>
+                    <div class="grid grid-cols-5 gap-2 relative" style="z-index: 2;">
+                        
+                        <button onclick="changeStep(1)" id="btn-step-1" class="timeline-step step-active flex flex-col items-center focus:outline-none">
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">1</span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Mapeamento</strong>
+                        </button>
+                        
+                        <button onclick="changeStep(2)" id="btn-step-2" class="timeline-step flex flex-col items-center focus:outline-none">
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">2</span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Conexão & ETL</strong>
+                        </button>
+                        
+                        <button onclick="changeStep(3)" id="btn-step-3" class="timeline-step flex flex-col items-center focus:outline-none">
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">3</span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Modelagem</strong>
+                        </button>
+
+                        <button onclick="changeStep(4)" id="btn-step-4" class="timeline-step flex flex-col items-center focus:outline-none">
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">4</span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Painéis</strong>
+                        </button>
+
+                        <button onclick="changeStep(5)" id="btn-step-5" class="timeline-step flex flex-col items-center focus:outline-none">
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">5</span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Homologação</strong>
+                        </button>
+
                     </div>
                 </div>
 
-                <!-- Back-end -->
-                <div class="glass-card p-5 rounded-xl flex flex-col gap-3">
-                    <h4 class="text-base font-semibold text-white">Back-end & DB</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">Node.js</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">Python</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">T-SQL / SQL Server</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">PostgreSQL</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">Redis</span>
-                    </div>
-                </div>
-
-                <!-- SRE / DevOps -->
-                <div class="glass-card p-5 rounded-xl flex flex-col gap-3">
-                    <h4 class="text-base font-semibold text-white">Infra & SRE</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">Docker Swarm</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">NGINX</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">Prometheus</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">Grafana (Alloy, Loki, Tempo)</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-nested border border-border-color rounded text-text-muted hover:text-primary hover:border-primary transition-colors">Git & Shell</span>
-                    </div>
+                <!-- Painel de Detalhes Dinâmico -->
+                <div class="bg-nested border border-border-color p-4 rounded-lg min-h-[90px] flex flex-col justify-center transition-all">
+                    <h4 id="step-title" class="font-bold text-white text-sm mb-2 text-primary">Fase 1 — Mapeamento & Definição</h4>
+                    <p id="step-desc" class="text-sm text-text-muted leading-relaxed">Levantamento de requisitos de negócio, mapeamento de KPIs estratégicos e consolidação do Blueprint de Arquitetura & Governança de dados da organização.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Call to Action Compacto -->
+        <!-- Call to Action -->
         <section id="contato" class="animate-fade-in delay-200 bg-gradient-to-r from-raised to-ground border border-primary/20 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
             <div>
-                <h3 class="text-xl font-bold text-white mb-1">Precisa de apoio técnico?</h3>
-                <p class="text-sm text-text-muted">Vamos conversar sobre a arquitetura do seu próximo projeto.</p>
+                <h3 class="text-xl font-bold text-white mb-1">Vamos estruturar o seu projeto?</h3>
+                <p class="text-sm text-text-muted">Entre em contato para discutirmos a arquitetura ideal.</p>
             </div>
-            <a href="https://www.linkedin.com/in/walex-piccinini/" target="_blank" class="btn-neon px-8 py-2.5 rounded-lg font-bold text-sm whitespace-nowrap">
+            <a href="https://linkedin.com/in/[SEU_LINKEDIN_AQUI]" target="_blank" class="btn-neon px-8 py-2.5 rounded-lg font-bold text-sm whitespace-nowrap text-center">
                 Falar no LinkedIn
             </a>
         </section>
         
     </main>
 
-    <!-- Footer Mínimo -->
-    <footer class="border-t border-border-color/50 py-4 text-center text-xs text-text-muted">
-        <p>© 2026 Walex Piccinini. Crafted with Tailwind CSS & Brand Tokens.</p>
+    <!-- Footer Oficial da Empresa -->
+    <footer class="border-t border-border-color/50 py-6 text-center text-xs text-text-muted mt-auto">
+        <p class="font-bold text-slate-300 mb-1">WARP CONSULTORIA EM TECNOLOGIA DA INFORMAÇÃO</p>
+        <p>CNPJ: 66.929.913/0001-03</p>
+        <p class="mt-2 text-[10px] opacity-60">© 2026 Todos os direitos reservados. Crafted with Tailwind CSS.</p>
     </footer>
 
+    <!-- Script da Metodologia Interativa -->
+    <script>
+        const stepData = {
+            1: {
+                title: "Fase 1 — Mapeamento & Definição",
+                desc: "Levantamento de requisitos de negócio, mapeamento de KPIs estratégicos e consolidação do Blueprint de Arquitetura & Governança de dados da organização."
+            },
+            2: {
+                title: "Fase 2 — Conexão & Engenharia (ETL)",
+                desc: "Criação de rotinas de extração seguras (APIs/Web Services), configuração de conectores em nuvem e agendamento de atualizações automáticas dos fluxos de dados."
+            },
+            3: {
+                title: "Fase 3 — Modelagem & Inteligência",
+                desc: "Construção de modelos relacionais otimizados (Star Schema) e desenvolvimento de cálculos analíticos avançados para extração de valor real dos dados."
+            },
+            4: {
+                title: "Fase 4 — Painéis & Visualização (UX/UI)",
+                desc: "Desenho de dashboards interativos e modernos, com navegação fluida, alertas visuais, indicadores chave de desempenho (KPIs) e segurança por perfil (RLS)."
+            },
+            5: {
+                title: "Fase 5 — Homologação & Capacitação",
+                desc: "Validação técnica da arquitetura, auditoria de resultados e capacitação prática da equipe no uso da ferramenta para garantir a cultura data-driven."
+            }
+        };
+
+        function changeStep(stepNumber) {
+            // Remove active class from all buttons
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`btn-step-${i}`).classList.remove('step-active');
+            }
+            
+            // Add active class to clicked button
+            document.getElementById(`btn-step-${stepNumber}`).classList.add('step-active');
+            
+            // Update Text Content
+            document.getElementById('step-title').innerText = stepData[stepNumber].title;
+            document.getElementById('step-desc').innerText = stepData[stepNumber].desc;
+        }
+    </script>
 </body>
 </html>
