@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WARP Consultoria | Dev & BI</title>
+    <title>WARP Consultoria | Soluções em TI</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -98,7 +98,7 @@
             transform: scale(1.03);
         }
 
-        /* Timeline Interativa Customizada */
+        /* Abas Interativas Customizadas */
         .timeline-step {
             cursor: pointer;
             transition: all 0.2s ease-in-out;
@@ -125,7 +125,7 @@
         <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="text-xl font-bold tracking-tighter transition-transform hover:scale-105">WARP<span class="text-primary">.</span></a>
             <div class="flex gap-4 sm:gap-6 items-center text-sm font-medium">
-                <a href="#metodologia" class="text-text-muted hover:text-primary transition-colors">Metodologia</a>
+                <a href="#solucoes" class="text-text-muted hover:text-primary transition-colors">Soluções</a>
                 <a href="https://github.com/walexpiccinini" target="_blank" class="text-text-muted hover:text-primary transition-colors">GitHub</a>
                 <a href="#contato" class="btn-neon px-4 py-1.5 font-bold rounded-md">Contato</a>
             </div>
@@ -144,9 +144,9 @@
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-text-muted mb-2 leading-tight">
                     Walex Piccinini
                 </h1>
-                <h2 class="text-xl text-primary mb-4 font-medium">Desenvolvedor Full Stack & Consultor de Dados</h2>
+                <h2 class="text-xl text-primary mb-4 font-medium">Engenharia de Software & Consultoria</h2>
                 <p class="text-base text-text-muted leading-relaxed max-w-xl">
-                    Atuação em desenvolvimento de software corporativo e estruturação técnica de Business Intelligence (BI). Foco em transformar dados em indicadores reais, garantindo arquiteturas seguras e performance analítica.
+                    Especialista em transformar necessidades de negócio em soluções tecnológicas robustas. Ampla experiência em sistemas ERP, desenvolvimento Full Stack, integrações complexas e infraestrutura de alta disponibilidade.
                 </p>
             </div>
             
@@ -162,39 +162,49 @@
             </div>
         </header>
 
-        <!-- Cronograma Interativo da Proposta Comercial -->
-        <section id="metodologia" class="animate-fade-in delay-100 flex flex-col gap-4">
-            <h3 class="text-xl font-bold text-white mb-2">Metodologia de Consultoria BI</h3>
+        <!-- Áreas de Atuação / Soluções (Substituindo o Cronograma de BI) -->
+        <section id="solucoes" class="animate-fade-in delay-100 flex flex-col gap-4">
+            <h3 class="text-xl font-bold text-white mb-2">Áreas de Especialização</h3>
             
             <div class="glass-card p-6 rounded-xl flex flex-col gap-6">
-                <!-- Linha do Tempo -->
+                <!-- Abas -->
                 <div class="relative">
                     <div class="absolute top-[14px] left-[10%] right-[10%] h-[2px] bg-border-color" style="z-index: 1;"></div>
                     <div class="grid grid-cols-5 gap-2 relative" style="z-index: 2;">
                         
                         <button onclick="changeStep(1)" id="btn-step-1" class="timeline-step step-active flex flex-col items-center focus:outline-none">
-                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">1</span>
-                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Mapeamento</strong>
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                            </span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">TOTVS RM</strong>
                         </button>
                         
                         <button onclick="changeStep(2)" id="btn-step-2" class="timeline-step flex flex-col items-center focus:outline-none">
-                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">2</span>
-                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Conexão & ETL</strong>
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Dev Web</strong>
                         </button>
                         
                         <button onclick="changeStep(3)" id="btn-step-3" class="timeline-step flex flex-col items-center focus:outline-none">
-                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">3</span>
-                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Modelagem</strong>
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">APIs & Int.</strong>
                         </button>
 
                         <button onclick="changeStep(4)" id="btn-step-4" class="timeline-step flex flex-col items-center focus:outline-none">
-                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">4</span>
-                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Painéis</strong>
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            </span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">BI & Dados</strong>
                         </button>
 
                         <button onclick="changeStep(5)" id="btn-step-5" class="timeline-step flex flex-col items-center focus:outline-none">
-                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">5</span>
-                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Homologação</strong>
+                            <span class="w-8 h-8 rounded-full bg-nested border border-border-color text-text-muted font-bold text-xs flex items-center justify-center mb-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                            </span>
+                            <strong class="text-[10px] text-text-muted uppercase tracking-wider text-center">Servidores</strong>
                         </button>
 
                     </div>
@@ -202,8 +212,8 @@
 
                 <!-- Painel de Detalhes Dinâmico -->
                 <div class="bg-nested border border-border-color p-4 rounded-lg min-h-[90px] flex flex-col justify-center transition-all">
-                    <h4 id="step-title" class="font-bold text-white text-sm mb-2 text-primary">Fase 1 — Mapeamento & Definição</h4>
-                    <p id="step-desc" class="text-sm text-text-muted leading-relaxed">Levantamento de requisitos de negócio, mapeamento de KPIs estratégicos e consolidação do Blueprint de Arquitetura & Governança de dados da organização.</p>
+                    <h4 id="step-title" class="font-bold text-white text-sm mb-2 text-primary">Consultoria TOTVS RM</h4>
+                    <p id="step-desc" class="text-sm text-text-muted leading-relaxed">Implantação, parametrização e suporte especializado nos módulos Educacional e Backoffice (Fluxus, Saldus, Labore, etc.). Criação de relatórios, consultas SQL e otimização de rotinas acadêmicas e financeiras.</p>
                 </div>
             </div>
         </section>
@@ -211,8 +221,8 @@
         <!-- Call to Action -->
         <section id="contato" class="animate-fade-in delay-200 bg-gradient-to-r from-raised to-ground border border-primary/20 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
             <div>
-                <h3 class="text-xl font-bold text-white mb-1">Vamos estruturar o seu projeto?</h3>
-                <p class="text-sm text-text-muted">Entre em contato para discutirmos a arquitetura ideal.</p>
+                <h3 class="text-xl font-bold text-white mb-1">Precisa de suporte técnico?</h3>
+                <p class="text-sm text-text-muted">Entre em contato para discutirmos a arquitetura do seu próximo projeto.</p>
             </div>
             <a href="https://linkedin.com/in/[SEU_LINKEDIN_AQUI]" target="_blank" class="btn-neon px-8 py-2.5 rounded-lg font-bold text-sm whitespace-nowrap text-center">
                 Falar no LinkedIn
@@ -228,28 +238,28 @@
         <p class="mt-2 text-[10px] opacity-60">© 2026 Todos os direitos reservados. Crafted with Tailwind CSS.</p>
     </footer>
 
-    <!-- Script da Metodologia Interativa -->
+    <!-- Script da Área de Atuação Interativa -->
     <script>
         const stepData = {
             1: {
-                title: "Fase 1 — Mapeamento & Definição",
-                desc: "Levantamento de requisitos de negócio, mapeamento de KPIs estratégicos e consolidação do Blueprint de Arquitetura & Governança de dados da organização."
+                title: "Consultoria TOTVS RM",
+                desc: "Implantação, parametrização e suporte especializado nos módulos Educacional e Backoffice (Fluxus, Saldus, Labore, etc.). Criação de relatórios, consultas SQL (T-SQL) e otimização de rotinas acadêmicas e financeiras."
             },
             2: {
-                title: "Fase 2 — Conexão & Engenharia (ETL)",
-                desc: "Criação de rotinas de extração seguras (APIs/Web Services), configuração de conectores em nuvem e agendamento de atualizações automáticas dos fluxos de dados."
+                title: "Desenvolvimento Web (Full Stack)",
+                desc: "Criação de aplicações web sob medida, portais e dashboards utilizando tecnologias modernas do mercado (Angular, Node.js, TypeScript e Tailwind CSS), focando sempre em alta performance e escalabilidade."
             },
             3: {
-                title: "Fase 3 — Modelagem & Inteligência",
-                desc: "Construção de modelos relacionais otimizados (Star Schema) e desenvolvimento de cálculos analíticos avançados para extração de valor real dos dados."
+                title: "Integração de Sistemas & APIs",
+                desc: "Construção e consumo de APIs REST/SOAP para conectar ecossistemas complexos. Sincronização segura de dados em tempo real entre plataformas de terceiros, CRMs, ERPs e aplicativos."
             },
             4: {
-                title: "Fase 4 — Painéis & Visualização (UX/UI)",
-                desc: "Desenho de dashboards interativos e modernos, com navegação fluida, alertas visuais, indicadores chave de desempenho (KPIs) e segurança por perfil (RLS)."
+                title: "Business Intelligence & Dados",
+                desc: "Estruturação de processos de ETL, Data Warehousing e desenvolvimento de painéis gerenciais interativos (Power BI, Grafana) para apoiar a tomada de decisão estratégica baseada em dados reais."
             },
             5: {
-                title: "Fase 5 — Homologação & Capacitação",
-                desc: "Validação técnica da arquitetura, auditoria de resultados e capacitação prática da equipe no uso da ferramenta para garantir a cultura data-driven."
+                title: "Infraestrutura, Redes & Servidores",
+                desc: "Arquitetura, configuração e monitoramento de servidores físicos ou em nuvem. Experiência com orquestração (Docker Swarm), configuração de proxies (NGINX) e ferramentas de observabilidade (Prometheus)."
             }
         };
 
