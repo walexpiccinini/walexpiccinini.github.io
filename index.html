@@ -1,26 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walex Piccinini | Desenvolvedor de Software</title>
-    <!-- Importando o Tailwind CSS via CDN para uso imediato -->
+    
+    <!-- Importando o Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configurando o Tailwind para usar os tokens da Rasoftech -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--primary-color)',
+                        'primary-contrast': 'var(--primary-color-contrast)',
+                        secondary: 'var(--secondary-color)',
+                        ground: 'var(--surface-ground)',
+                        raised: 'var(--surface-raised)',
+                        nested: 'var(--surface-nested)',
+                        hover: 'var(--surface-hover)',
+                        'border-color': 'var(--border-color)',
+                        'text-main': 'var(--text-color)',
+                        'text-muted': 'var(--text-color-secondary)',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         /* Ajuste fino para rolagem suave */
         html { scroll-behavior: smooth; }
+
+        /* Rasoftech Brand Tokens (Adaptados para CSS puro) */
+        html.dark {
+            --primary-color: #00E5BC; /* Teal Neon */
+            --primary-color-contrast: #020B12;
+            
+            --secondary-color: #0A385A; /* Azul Marinho */
+            
+            --surface-ground: #020B12; /* Fundo ultra-profundo */
+            --surface-raised: #051624; /* Cards e Sidebar */
+            --surface-nested: #0A2133; /* Inputs e sub-áreas */
+            --surface-hover: #102E44; /* Hover sutil */
+            
+            --text-color: #F8FAFC; /* Branco de alto contraste */
+            --text-color-secondary: #94A3B8; /* Cinza azulado */
+            
+            --border-color: #142D40; /* Bordas */
+        }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-300 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+<body class="bg-ground text-text-main font-sans antialiased selection:bg-primary selection:text-primary-contrast">
 
     <!-- Navegação -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-ground/80 border-b border-border-color">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white tracking-tighter">WP<span class="text-cyan-400">.</span></a>
+            <a href="#" class="text-2xl font-bold text-text-main tracking-tighter">WP<span class="text-primary">.</span></a>
             <div class="space-x-6 text-sm font-medium">
-                <a href="#sobre" class="hover:text-cyan-400 transition-colors">Sobre</a>
-                <a href="#skills" class="hover:text-cyan-400 transition-colors">Habilidades</a>
-                <a href="#contato" class="px-4 py-2 bg-cyan-600 text-white rounded-md hover:bg-cyan-500 transition-colors">Contato</a>
+                <a href="#sobre" class="text-text-muted hover:text-primary transition-colors">Sobre</a>
+                <a href="#skills" class="text-text-muted hover:text-primary transition-colors">Habilidades</a>
+                <a href="#contato" class="px-4 py-2 bg-primary text-primary-contrast font-bold rounded-md hover:bg-opacity-80 transition-all">Contato</a>
             </div>
         </div>
     </nav>
@@ -28,33 +71,33 @@
     <!-- Cabeçalho / Hero Section -->
     <header class="max-w-6xl mx-auto px-4 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between gap-12">
         <div class="md:w-2/3">
-            <p class="text-cyan-400 font-semibold tracking-wide mb-2">Olá, eu sou o</p>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">Walex Piccinini</h1>
-            <h2 class="text-2xl md:text-3xl text-slate-400 mb-8 font-light">Desenvolvedor de Software Full Stack & SRE</h2>
-            <p class="text-lg leading-relaxed mb-8 max-w-2xl">
+            <p class="text-primary font-semibold tracking-wide mb-2">Olá, eu sou o</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-text-main mb-6 leading-tight">Walex Piccinini</h1>
+            <h2 class="text-2xl md:text-3xl text-text-muted mb-8 font-light">Desenvolvedor de Software Full Stack & SRE</h2>
+            <p class="text-lg leading-relaxed mb-8 max-w-2xl text-text-muted">
                 Focado em criar soluções eficientes, escaláveis e de alta qualidade. Tenho experiência profunda no desenvolvimento de software de ponta a ponta e na construção de infraestruturas robustas de observabilidade.
             </p>
             <div class="flex gap-4">
-                <a href="#projetos" class="px-6 py-3 bg-white text-slate-900 font-semibold rounded-md hover:bg-slate-200 transition-colors">Ver Projetos</a>
-                <a href="https://github.com/walexpiccinini" target="_blank" class="px-6 py-3 border border-slate-700 text-white font-semibold rounded-md hover:border-cyan-400 hover:text-cyan-400 transition-colors">GitHub</a>
+                <a href="#projetos" class="px-6 py-3 bg-primary text-primary-contrast font-bold rounded-md hover:bg-opacity-80 transition-all">Ver Projetos</a>
+                <a href="https://github.com/walexpiccinini" target="_blank" class="px-6 py-3 border border-border-color text-text-main font-semibold rounded-md hover:border-primary hover:text-primary transition-colors">GitHub</a>
             </div>
         </div>
     </header>
 
     <!-- Seção de Habilidades (Skills) -->
-    <section id="skills" class="bg-slate-800/50 py-20 border-y border-slate-800">
+    <section id="skills" class="bg-raised py-20 border-y border-border-color">
         <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold text-white mb-12 text-center">Tecnologias e Ferramentas</h3>
+            <h3 class="text-3xl font-bold text-text-main mb-12 text-center">Tecnologias e Ferramentas</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <!-- Card Front-end -->
-                <div class="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-colors">
-                    <div class="w-12 h-12 bg-cyan-900/50 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                <div class="bg-ground p-8 rounded-xl border border-border-color hover:border-primary transition-colors">
+                    <div class="w-12 h-12 bg-nested rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-4">Front-end</h4>
-                    <ul class="space-y-2">
+                    <h4 class="text-xl font-bold text-text-main mb-4">Front-end</h4>
+                    <ul class="space-y-2 text-text-muted">
                         <li>Angular & TypeScript</li>
                         <li>JavaScript & HTML5</li>
                         <li>Tailwind CSS & Sass</li>
@@ -62,12 +105,12 @@
                 </div>
 
                 <!-- Card Back-end & Dados -->
-                <div class="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-colors">
-                    <div class="w-12 h-12 bg-cyan-900/50 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                <div class="bg-ground p-8 rounded-xl border border-border-color hover:border-primary transition-colors">
+                    <div class="w-12 h-12 bg-nested rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-4">Back-end & DB</h4>
-                    <ul class="space-y-2">
+                    <h4 class="text-xl font-bold text-text-main mb-4">Back-end & DB</h4>
+                    <ul class="space-y-2 text-text-muted">
                         <li>Node.js & Python</li>
                         <li>SQL Server (T-SQL)</li>
                         <li>PostgreSQL & MySQL</li>
@@ -76,12 +119,12 @@
                 </div>
 
                 <!-- Card Infraestrutura & Observabilidade -->
-                <div class="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-colors">
-                    <div class="w-12 h-12 bg-cyan-900/50 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <div class="bg-ground p-8 rounded-xl border border-border-color hover:border-primary transition-colors">
+                    <div class="w-12 h-12 bg-nested rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-4">Infra & SRE</h4>
-                    <ul class="space-y-2">
+                    <h4 class="text-xl font-bold text-text-main mb-4">Infra & SRE</h4>
+                    <ul class="space-y-2 text-text-muted">
                         <li>Docker Swarm & NGINX</li>
                         <li>Stack Grafana (Alloy, Loki, Tempo)</li>
                         <li>Prometheus</li>
@@ -94,17 +137,17 @@
     </section>
 
     <!-- Seção de Contato -->
-    <section id="contato" class="max-w-4xl mx-auto px-4 py-24 text-center">
-        <h3 class="text-3xl font-bold text-white mb-6">Vamos construir algo juntos?</h3>
-        <p class="text-lg mb-10 text-slate-400">Estou sempre aberto a conversar sobre arquitetura de software, novas tecnologias ou oportunidades.</p>
-        <a href="https://linkedin.com/in/[SEU_LINKEDIN_AQUI]" target="_blank" class="inline-block px-8 py-4 bg-cyan-600 text-white font-bold rounded-md hover:bg-cyan-500 transition-colors">
+    <section id="contato" class="bg-ground max-w-4xl mx-auto px-4 py-24 text-center">
+        <h3 class="text-3xl font-bold text-text-main mb-6">Vamos construir algo juntos?</h3>
+        <p class="text-lg mb-10 text-text-muted">Estou sempre aberto a conversar sobre arquitetura de software, novas tecnologias ou oportunidades.</p>
+        <a href="https://linkedin.com/in/[SEU_LINKEDIN_AQUI]" target="_blank" class="inline-block px-8 py-4 bg-primary text-primary-contrast font-bold rounded-md hover:bg-opacity-80 transition-all">
             Conectar no LinkedIn
         </a>
     </section>
 
     <!-- Rodapé -->
-    <footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
-        <p>© 2026 Walex Piccinini. Construído com HTML e Tailwind CSS.</p>
+    <footer class="bg-ground border-t border-border-color py-8 text-center text-sm text-text-muted">
+        <p>© 2026 Walex Piccinini. Construído com HTML, Tailwind CSS e Brand Tokens da Rasoftech.</p>
     </footer>
 
 </body>
